@@ -25,15 +25,16 @@
 # define BLUE "\033[0;34m"
 # define RED "\033[0;31m"
 # define RE "\033[0m"
-
-# define INVALID_VALUE	"Invalid parameters! Philosopher must be \
-non zero positive number and others must be unsigned positive numbers"
-# define INVALID_ARGV	"You must specify at least 4 arguments and maximum 5 including:\n\
-- number_of_philosophers,\n\
-- time_to_die,\n\
-- time_to_eat,\n\
-- time_to_sleep,\n\
-- number_of_times_each_philosopher_must_eat (optional).\n"
+# define INVALID_ARGV "\
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓\n\
+┃You must specify at least 4 or 5 arguments:      ┃  Rules ┃\n\
+┃ - [1] number_of_philosophers                    ┃  >  0  ┃\n\
+┃ - [2] time_to_die                               ┃  >= 0  ┃\n\
+┃ - [3] time_to_eat                               ┃  >= 0  ┃\n\
+┃ - [4] time_to_sleep                             ┃  >= 0  ┃\n\
+┃ - [5] number_of_times_each_philosopher_must_eat ┃  >= 0  ┃\n\
+┃ - Obs: Argument 5 is optional.                  ┃   --   ┃\n\
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━┛\n"
 
 
 int	ft_isdigit(int c);

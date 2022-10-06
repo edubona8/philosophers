@@ -30,7 +30,7 @@ int check_arguments(int argc, char **argv)
         {
             if(!ft_isdigit(argv[i][j]))
             {
-                printf(RED "ERROR: " RE "\n%s", INVALID_VALUE);
+                printf(RED "ERROR: " RE "\n%s", INVALID_ARGV);
                 exit(1);
             }
         }
@@ -40,7 +40,7 @@ int check_arguments(int argc, char **argv)
 
 int main(int argc, char **argv)
 {
-    t_data *data;
+    // t_data *data;
 
     if (check_arguments(argc, argv))
 		return (1);
