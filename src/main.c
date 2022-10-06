@@ -12,37 +12,31 @@
 
 #include "../includes/philo.h"
 
-int check_arguments(int argc, char **argv)
+int	check_arguments(char **argv)
 {
-    int i;
-    int j;
+	int	i;
+	int	j;
 
-    i = 0;
-    if (argc < 5 || argc > 6)
+	i = 0;
+	while (argv[++i] != NULL)
 	{
-		printf(RED "ERROR: " RE "\n%s", INVALID_ARGV);
-        exit(1);
+		j = -1;
+		while (argv[i][++j] != '\0')
+		{
+			if (!ft_isdigit(argv[i][j]))
+				return (0);
+		}
 	}
-    while(argv[++i])
-    {
-        j = -1;
-        while(argv[i][++j])
-        {
-            if(!ft_isdigit(argv[i][j]))
-            {
-                printf(RED "ERROR: " RE "\n%s", INVALID_ARGV);
-                exit(1);
-            }
-        }
-    }
-    return (1);
+	return (1);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-    // t_data *data;
+	// t_data	*data;
 
-    if (check_arguments(argc, argv))
-		return (1);
-    return (0);
+	if (argc < 5 || argc > 6 || check_arguments(argv) == 0)
+	{
+		printf("%s", INVALID_ARGV);
+		exit (1);
+	}
 }

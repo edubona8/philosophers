@@ -27,7 +27,8 @@
 # define RE "\033[0m"
 # define INVALID_ARGV "\
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓\n\
-┃You must specify at least 4 or 5 arguments:      ┃  Rules ┃\n\
+┃ERROR: You must specify at least 4 or 5 arguments┃  Rules ┃\n\
+┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃━━━━━━━━┃\n\
 ┃ - [1] number_of_philosophers                    ┃  >  0  ┃\n\
 ┃ - [2] time_to_die                               ┃  >= 0  ┃\n\
 ┃ - [3] time_to_eat                               ┃  >= 0  ┃\n\
