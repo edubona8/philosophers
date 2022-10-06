@@ -40,7 +40,7 @@ int check_arguments(int argc, char **argv)
 
 int main(int argc, char **argv)
 {
-    // t_data *data;
+    t_data *data;
 
     if (check_arguments(argc, argv))
 		return (1);
