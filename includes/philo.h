@@ -21,10 +21,10 @@
 # include <pthread.h>
 # include <errno.h>
 
-# define GREEN  "\033[0;32m"
-# define BLUE  "\033[0;34m"
-# define RED  "\033[0;31m"
-# define RESET  "\033[0m"
+# define GREEN "\033[0;32m"
+# define BLUE "\033[0;34m"
+# define RED "\033[0;31m"
+# define RE "\033[0m"
 
 # define INVALID_VALUE	"Invalid parameters! Philosopher must be \
 non zero positive number and others must be unsigned positive numbers"

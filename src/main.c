@@ -20,7 +20,7 @@ int check_arguments(int argc, char **argv)
     i = 0;
     if (argc < 5 || argc > 6)
 	{
-		printf("%s", INVALID_ARGV);
+		printf(RED "ERROR: " RE "\n%s", INVALID_ARGV);
         exit(1);
 	}
     while(argv[++i])
@@ -30,7 +30,7 @@ int check_arguments(int argc, char **argv)
         {
             if(!ft_isdigit(argv[i][j]))
             {
-                printf("%s", INVALID_VALUE);
+                printf(RED "ERROR: " RE "\n%s", INVALID_VALUE);
                 exit(1);
             }
         }
@@ -42,7 +42,7 @@ int main(int argc, char **argv)
 {
     // t_data *data;
 
-    if (check_ar(argc, argv))
+    if (check_arguments(argc, argv))
 		return (1);
     return (0);
 }
