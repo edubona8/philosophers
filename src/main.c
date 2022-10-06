@@ -12,9 +12,32 @@
 
 #include "../includes/philo.h"
 
-
-int main()
+int check_arguments(char **argv)
 {
-    printf("Feynman.");
+    int i;
+    int j;
+
+    i = 0;
+    while(argv[++i])
+    {
+        j = -1;
+        while(argv[i][++j])
+        {
+            if(!ft_isdigit(argv[i][j]))
+                return (0);
+        }
+    }
+    return (1);
+}
+
+int main(int argc, char **argv)
+{
+    // t_data *data;
+
+    if((argc < 5 || argc > 6) || check_arguments(argv) == 0)
+    {
+        printf("Error: Invalid Arguments!");
+        exit(1);
+    }
     return (0);
 }

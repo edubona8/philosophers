@@ -19,4 +19,8 @@
 # include <stdio.h>
 # include <sys/time.h>
 
+
+int	ft_isdigit(int c);
+int	ft_atoi(const char *nptr);
+
 #endif

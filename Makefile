@@ -21,7 +21,8 @@ RM            	=    rm -f
 SRC_PATH    	=    ./src/
 OBJ_PATH    	=    ./obj/
 
-SRC_FILES    	=	main.c 
+SRC_FILES    	=	main.c	\
+					utils.c
 
 SRC            	=    $(addprefix $(SRC_PATH),$(SRC_FILES))
 OBJ            	=    $(addprefix $(OBJ_PATH),$(subst .c,.o,$(SRC_FILES)))
