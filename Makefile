@@ -10,6 +10,10 @@
 #                                                                              #
 # **************************************************************************** #
 
+GREEN = \033[0;32m
+RED = \033[0;31m
+RESET = \033[0m
+
 NAME			=	philo
 HEADER			=	philo.h
 
@@ -33,14 +37,17 @@ $(OBJ_PATH)%.o:	$(SRC_PATH)%.c
 
 all:            $(NAME)
 
-$(NAME):        $(LIBFT) $(PRINTF) $(OBJ)
+$(NAME):        $(OBJ)
 				$(CC) -o $(NAME) $(OBJ)
+				@echo "$(NAME): $(GREEN)$(NAME) was created$(RESET)"
 		
 clean:
 				$(RM) $(OBJ)
+				@echo "$(NAME): $(RED)object files were deleted$(RESET)"
 
 fclean:            clean
 				$(RM) $(NAME) rm -rf $(OBJ_PATH)
+				@echo "$(NAME): $(RED)$(NAME) was deleted$(RESET)"
 
 re:				fclean all
 
