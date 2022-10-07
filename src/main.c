@@ -12,6 +12,13 @@
 
 #include "../includes/philo.h"
 
+/**
+ * It checks if the arguments are valid
+ * 
+ * @param argv The array of arguments passed to the program.
+ * 
+ * @return the value of the expression.
+ */
 int	check_arguments(char **argv)
 {
 	int	i;
@@ -30,6 +37,12 @@ int	check_arguments(char **argv)
 	return (1);
 }
 
+/**
+ * It checks the arguments passed to the program.
+ * 
+ * @param argc the number of arguments passed to the program
+ * @param argv the arguments passed to the program
+ */
 int	main(int argc, char **argv)
 {
 	// t_data	*data;
