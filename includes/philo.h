@@ -37,6 +37,16 @@
 ┃ - Obs: Argument 5 is optional.                  ┃   --   ┃\n\
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━┛\n"RE
 
+typedef struct s_data
+{
+    int				number_of_philosophers;
+	int				time_to_die;
+	int				time_to_eat;
+	int				time_to_sleep;
+	int				number_eat;
+	long long		start_time;
+} t_data;
+
 /**
  * If the character is between 0 and 9, return 1, otherwise return 0
  * 
