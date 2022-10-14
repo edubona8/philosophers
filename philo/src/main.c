@@ -62,7 +62,7 @@ int	main(int argc, char **argv)
 		data->eat_num = ft_atoi(argv[5]);
 	else
 		data->eat_num = -1;
-	init_philo_list(data);
+	init_circular_list_philo(data);
 	start_threads(data);
 	free_all(data);
 }

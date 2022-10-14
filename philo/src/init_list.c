@@ -31,10 +31,8 @@ static void	add_to_list(t_philo *philo, t_data *data, int n)
 	first->prev = new_philo;
 }
 
-void	init_philo_list(t_data *data)
+void	create_list(t_data *data)
 {
-	int	n;
-
 	data->philo = (t_philo *) malloc (sizeof(t_philo));
 	pthread_mutex_init(&data->philo->fork, NULL);
 	data->philo->data = data;
@@ -42,6 +40,13 @@ void	init_philo_list(t_data *data)
 	data->philo->eat_count = 0;
 	data->philo->next = data->philo;
 	data->philo->prev = data->philo;
+}
+
+void	init_circular_list_philo(t_data *data)
+{
+	int	n;
+
+	create_list(data);
 	n = 0;
 	while (++n < data->philo_num)
 		add_to_list(data->philo, data, n);
