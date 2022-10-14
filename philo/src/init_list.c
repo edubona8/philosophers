@@ -12,26 +12,26 @@
 
 #include "../philo.h"
 
-static void	add_to_list(t_philo *philo, t_data *data, int n)
+static void	add_to_circular_list(t_philo *philo, t_data *data, int n)
 {
 	t_philo	*new_philo;
-	t_philo	*first;
+	t_philo	*aux_head_reference;
 
-	first = philo;
+	aux_head_reference = philo;
 	new_philo = (t_philo *) malloc (sizeof(t_philo));
 	pthread_mutex_init(&new_philo->fork, NULL);
-	new_philo->id = n + 1;
 	new_philo->data = data;
+	new_philo->id = n + 1;
 	new_philo->eat_count = 0;
-	while (philo->next != first)
+	while (philo->next != aux_head_reference)
 		philo = philo->next;
 	philo->next = new_philo;
-	new_philo->next = first;
+	new_philo->next = aux_head_reference;
 	new_philo->prev = philo;
-	first->prev = new_philo;
+	aux_head_reference->prev = new_philo;
 }
 
-void	create_list(t_data *data)
+void	create_circular_list(t_data *data)
 {
 	data->philo = (t_philo *) malloc (sizeof(t_philo));
 	pthread_mutex_init(&data->philo->fork, NULL);
@@ -46,8 +46,8 @@ void	init_circular_list_philo(t_data *data)
 {
 	int	n;
 
-	create_list(data);
+	create_circular_list(data);
 	n = 0;
 	while (++n < data->philo_num)
-		add_to_list(data->philo, data, n);
+		add_to_circular_list(data->philo, data, n);
 }

@@ -35,28 +35,33 @@ static void	*philo_func(t_philo *philo)
 
 void	start_threads(t_data *data)
 {
-	int		n;
-	t_philo	*temp;
+	int		number_of_philo;
+	t_philo	*aux_head_reference;
 
-	n = data->philo_num;
-	temp = data->philo;
+	mutex_init(data);
+	number_of_philo = data->philo_num;
+	aux_head_reference = data->philo;
+	data->start_time = get_time();
+	while (number_of_philo > 0)
+	{
+		pthread_create(&aux_head_reference->thread, NULL, (void *)&philo_func, aux_head_reference);
+		aux_head_reference = aux_head_reference->next;
+		number_of_philo--;
+	}
+	death_check(data);
+	number_of_philo = data->philo_num;
+	while (number_of_philo > 0)
+	{
+		pthread_join(aux_head_reference->thread, NULL);
+		aux_head_reference = aux_head_reference->next;
+		number_of_philo--;
+	}
+}
+
+void mutex_init(t_data *data)
+{
 	pthread_mutex_init(&data->printer, NULL);
 	pthread_mutex_init(&data->stop_mutex, NULL);
 	pthread_mutex_init(&data->eat_mutex, NULL);
 	pthread_mutex_init(&data->eat_time_mutex, NULL);
-	data->start_time = get_time();
-	while (n > 0)
-	{
-		pthread_create(&temp->thread, NULL, (void *)&philo_func, temp);
-		temp = temp->next;
-		n--;
-	}
-	death_check(data);
-	n = data->philo_num;
-	while (n > 0)
-	{
-		pthread_join(temp->thread, NULL);
-		temp = temp->next;
-		n--;
-	}
 }
