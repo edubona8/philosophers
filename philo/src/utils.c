@@ -10,38 +10,51 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	my_math(const char *nptr, int a, int x, int n)
+#include "../philo.h"
+
+long long	get_time(void)
 {
-	while (nptr[a] > 47 && nptr[a] < 58)
-	{
-		if (n == 1)
-			x = (x * 10) + (nptr[a] - 48);
-		else
-			x = (x * 10) - (nptr[a] - 48);
-		a++;
-	}
-	return (x);
+	struct timeval	t;
+
+	gettimeofday(&t, NULL);
+	return ((t.tv_sec * 1000) + (t.tv_usec / 1000));
+}
+
+static int	ft_isdigit(int n)
+{
+	if (n >= 48 && n <= 57)
+		return (1);
+	return (0);
+}
+
+static int	ft_isspace(int c)
+{
+	if (c == ' ' || c == '\n' || c == '\t' || c == '\r'
+		|| c == '\f' || c == '\v')
+		return (1);
+	return (0);
 }
 
 int	ft_atoi(const char *nptr)
 {
-	int	a;
-	int	n;
-	int	x;
+	int	num;
+	int	sign;
 
-	n = 1;
-	a = 0;
-	x = 0;
-	while ((nptr[a] > 8 && nptr[a] < 14) || nptr[a] == 32)
-		a++;
-	if (nptr[a] == '+' || nptr[a] == '-')
+	while ((ft_isspace(*nptr)))
+		nptr++;
+	sign = 1;
+	if (*nptr == '+' || *nptr == '-')
 	{
-		if (nptr[a] == '-')
-			n *= -1;
-		a++;
+		if (*nptr == '-')
+			sign = -1;
+		nptr++;
 	}
-	else if (!(nptr[a] > 47 && nptr[a] < 58))
-		return (0);
-	x = my_math(nptr, a, x, n);
-	return (x);
+	num = 0;
+	while ((ft_isdigit(*nptr)))
+	{
+		num *= 10;
+		num += sign * (*nptr - '0');
+		nptr++;
+	}
+	return (num);
 }
