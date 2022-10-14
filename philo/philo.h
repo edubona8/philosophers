@@ -19,6 +19,8 @@
 # include <stdio.h>
 # include <sys/time.h>
 
+# define WAIT_ALL_THREADS_STARTED 5000
+
 typedef struct s_philo	t_philo;
 typedef struct s_data	t_data;
 

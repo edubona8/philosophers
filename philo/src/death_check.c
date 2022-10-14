@@ -37,10 +37,9 @@ void	death_check(t_data *data)
 	t_philo	*philo;
 
 	philo = data->philo;
-	usleep(5000);
+	usleep(WAIT_ALL_THREADS_STARTED);
 	while (check_stop(data))
 	{
-		usleep(10);
 		pthread_mutex_lock(&philo->data->eat_time_mutex);
 		if (get_time() - philo->last_eat_time > data->die_time)
 		{
