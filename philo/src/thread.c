@@ -33,7 +33,7 @@ static void	*philo_func(t_philo *philo)
 	return (NULL);
 }
 
-void	start_threads(t_data *data)
+void	init_threads(t_data *data)
 {
 	int		number_of_philo;
 	t_philo	*aux_head_reference;
