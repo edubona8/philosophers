@@ -19,8 +19,6 @@
 # include <stdio.h>
 # include <sys/time.h>
 
-# define WAIT_ALL_THREADS_STARTED 5000
-
 typedef struct s_philo	t_philo;
 typedef struct s_data	t_data;
 
@@ -62,11 +60,11 @@ long long	get_time(void);
 void		free_all(t_data *data);
 void		death_check(t_data *data);
 void		init_circular_list_philo(t_data *data);
-void 		create_circular_list(t_data *data);
+void		create_circular_list(t_data *data);
 void		death_check(t_data *data);
 void		init_threads(t_data *data);
-void 		mutex_init(t_data *data);
-void 		init_data(t_data *data, char **argv);
+void		mutex_init(t_data *data);
+void		init_data(t_data *data, char **argv);
 int			check_stop(t_data *data);
 int			eat_count_check(t_data *data);
 int			check_eat_mutex(t_philo *philo);

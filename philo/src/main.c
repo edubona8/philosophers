@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebonamic <ebonamic@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ebonamic <ebonamic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 02:27:58 by ebonamic          #+#    #+#             */
-/*   Updated: 2022/04/06 02:27:58 by ebonamic         ###   ########.fr       */
+/*   Created: 2022/10/15 06:44:40 by ebonamic          #+#    #+#             */
+/*   Updated: 2022/10/15 06:44:40 by ebonamic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int	check_args(int argc, char **argv)
 		printf ("\033[0;31m ERROR: \033[0mIncorrect number of arguments\n");
 		return (1);
 	}
-	
 	i = 1;
 	while (argv[i] != NULL)
 	{
@@ -31,7 +30,8 @@ int	check_args(int argc, char **argv)
 		{
 			if (argv[i][j] < '0' || argv[i][j] > '9')
 			{
-				printf ("\033[0;31m ERROR: \033[0mArguments are formatted incorrectly\n");
+				printf ("\033[0;31m ERROR: \033[0m \
+				Arguments are formatted incorrectly\n");
 				return (1);
 			}
 			j++;
@@ -41,8 +41,7 @@ int	check_args(int argc, char **argv)
 	return (0);
 }
 
-
-void init_data(t_data *data, char **argv)
+void	init_data(t_data *data, char **argv)
 {
 	data->philo_num = ft_atoi(argv[1]);
 	data->die_time = ft_atoi(argv[2]);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   thread.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebonamic <ebonamic@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ebonamic <ebonamic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 02:28:15 by ebonamic          #+#    #+#             */
-/*   Updated: 2022/04/06 02:28:15 by ebonamic         ###   ########.fr       */
+/*   Created: 2022/10/15 06:45:05 by ebonamic          #+#    #+#             */
+/*   Updated: 2022/10/15 06:45:05 by ebonamic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ void	init_threads(t_data *data)
 	data->start_time = get_time();
 	while (number_of_philo > 0)
 	{
-		pthread_create(&aux_head_reference->thread, NULL, (void *)&philo_func, aux_head_reference);
+		pthread_create(&aux_head_reference->thread, NULL,
+			(void *)&philo_func, aux_head_reference);
 		aux_head_reference = aux_head_reference->next;
 		number_of_philo--;
 	}
@@ -58,7 +59,7 @@ void	init_threads(t_data *data)
 	}
 }
 
-void mutex_init(t_data *data)
+void	mutex_init(t_data *data)
 {
 	pthread_mutex_init(&data->printer, NULL);
 	pthread_mutex_init(&data->stop_mutex, NULL);

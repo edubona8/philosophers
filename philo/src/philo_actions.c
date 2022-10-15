@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo_actions.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebonamic <ebonamic@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ebonamic <ebonamic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 02:28:13 by ebonamic          #+#    #+#             */
-/*   Updated: 2022/04/06 02:28:13 by ebonamic         ###   ########.fr       */
+/*   Created: 2022/10/15 06:44:55 by ebonamic          #+#    #+#             */
+/*   Updated: 2022/10/15 06:44:55 by ebonamic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
