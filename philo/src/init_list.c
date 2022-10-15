@@ -23,6 +23,7 @@ static void	add_to_circular_list(t_philo *philo, t_data *data, int n)
 	new_philo->data = data;
 	new_philo->id = n + 1;
 	new_philo->eat_count = 0;
+	new_philo->last_eat_time = 0;
 	while (philo->next != aux_head_reference)
 		philo = philo->next;
 	philo->next = new_philo;

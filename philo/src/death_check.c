@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   death_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vnazioze <vnazioze@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ebonamic <ebonamic@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/13 12:58:59 by vnazioze          #+#    #+#             */
-/*   Updated: 2022/10/13 12:58:59 by vnazioze         ###   ########.fr       */
+/*   Created: 2022/10/13 12:58:59 by ebonamic          #+#    #+#             */
+/*   Updated: 2022/10/13 12:58:59 by ebonamic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ void	death_check(t_data *data)
 	t_philo	*philo;
 
 	philo = data->philo;
-	usleep(WAIT_ALL_THREADS_STARTED);
 	while (check_stop(data))
 	{
+		usleep(10);
 		pthread_mutex_lock(&philo->data->eat_time_mutex);
 		if (get_time() - philo->last_eat_time > data->die_time)
 		{
